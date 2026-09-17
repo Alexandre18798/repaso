@@ -36,10 +36,10 @@ public class VehiculoController {
 
     @PostMapping
     public ResponseEntity<MessageResponse> crearVehiculo(
-            @RequestBody VehiculoDTO vehiculoDTO) {
+            @RequestBody VehiculoDTO vehiculoDTO54) {
 
         try {
-            vehiculoService.crearVehiculo(vehiculoDTO);
+            vehiculoService.crearVehiculo(vehiculoDTO54);
 
             return ResponseEntity.ok(
                     new MessageResponse("Vehiculo creado con exito")
@@ -52,11 +52,11 @@ public class VehiculoController {
 
     @PutMapping("/{idVehiculo}")
     public ResponseEntity<MessageResponse> actualizarVehiculo(
-            @PathVariable Integer idVehiculo,
-            @RequestBody VehiculoDTO vehiculoDTO) {
+            @PathVariable("idVehiculo") Integer idVehiculo54,
+            @RequestBody VehiculoDTO vehiculoDTO54) {
 
         try {
-            vehiculoService.modificarVehiculo(idVehiculo, vehiculoDTO);
+            vehiculoService.modificarVehiculo(idVehiculo54, vehiculoDTO54);
 
             return ResponseEntity.ok(
                     new MessageResponse("Vehiculo actualizado con exito")
@@ -69,10 +69,10 @@ public class VehiculoController {
 
     @PutMapping("/anular/{idVehiculo}")
     public ResponseEntity<MessageResponse> anularVehiculo(
-            @PathVariable Integer idVehiculo) {
+            @PathVariable("idVehiculo") Integer idVehiculo54) {
 
         try {
-            vehiculoService.anularVehiculo(idVehiculo);
+            vehiculoService.anularVehiculo(idVehiculo54);
 
             return ResponseEntity.ok(
                     new MessageResponse("Vehiculo anulado con exito")

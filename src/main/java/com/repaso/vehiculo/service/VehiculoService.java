@@ -22,69 +22,73 @@ public class VehiculoService {
     }
 
     public List<VehiculoDTO> mostrarActivos() {
-        return vehiculoRepository.findByEstadoTrueOrderByIdVehiculoDesc()
+        return vehiculoRepository.findByEstado54TrueOrderByIdVehiculo54Desc()
                 .stream()
                 .map(this::convertToDTO)
                 .collect(Collectors.toList());
     }
 
-    public VehiculoDTO crearVehiculo(VehiculoDTO dto) {
-        Vehiculo vehiculo = convertToEntity(dto);
-        vehiculo.setEstado(true);
+    public VehiculoDTO crearVehiculo(VehiculoDTO dto54) {
+        Vehiculo vehiculo54 = convertToEntity(dto54);
+        vehiculo54.setEstado54(true);
 
-        Vehiculo guardado = vehiculoRepository.save(vehiculo);
+        Vehiculo guardado54 = vehiculoRepository.save(vehiculo54);
 
-        return convertToDTO(guardado);
+        return convertToDTO(guardado54);
     }
 
-    public VehiculoDTO modificarVehiculo(Integer idVehiculo, VehiculoDTO dto) {
-        Vehiculo vehiculo = vehiculoRepository.findById(idVehiculo)
+    public VehiculoDTO modificarVehiculo(Integer idVehiculo54, VehiculoDTO dto54) {
+        Vehiculo vehiculo54 = vehiculoRepository.findById(idVehiculo54)
                 .orElseThrow(() ->
-                        new RuntimeException("El vehiculo no existe con id " + idVehiculo));
+                        new RuntimeException("El vehiculo no existe con id " + idVehiculo54));
 
-        vehiculo.setPlaca(dto.getPlaca());
-        vehiculo.setMarca(dto.getMarca());
-        vehiculo.setModelo(dto.getModelo());
-        vehiculo.setColor(dto.getColor());
-        vehiculo.setPrecioDia(dto.getPrecioDia());
+        vehiculo54.setPlaca54(dto54.getPlaca54());
+        vehiculo54.setMarca54(dto54.getMarca54());
+        vehiculo54.setModelo54(dto54.getModelo54());
+        vehiculo54.setColor54(dto54.getColor54());
+        vehiculo54.setPrecioDia54(dto54.getPrecioDia54());
 
-        Vehiculo actualizado = vehiculoRepository.save(vehiculo);
+        Vehiculo actualizado54 = vehiculoRepository.save(vehiculo54);
 
-        return convertToDTO(actualizado);
+        return convertToDTO(actualizado54);
     }
 
-    public VehiculoDTO anularVehiculo(Integer idVehiculo) {
-        Vehiculo vehiculo = vehiculoRepository.findById(idVehiculo)
+    public VehiculoDTO anularVehiculo(Integer idVehiculo54) {
+        Vehiculo vehiculo54 = vehiculoRepository.findById(idVehiculo54)
                 .orElseThrow(() ->
-                        new RuntimeException("El vehiculo no existe con id " + idVehiculo));
+                        new RuntimeException("El vehiculo no existe con id " + idVehiculo54));
 
-        vehiculo.setEstado(false);
+        vehiculo54.setEstado54(false);
 
-        Vehiculo anulado = vehiculoRepository.save(vehiculo);
+        Vehiculo anulado54 = vehiculoRepository.save(vehiculo54);
 
-        return convertToDTO(anulado);
+        return convertToDTO(anulado54);
     }
 
-    private VehiculoDTO convertToDTO(Vehiculo v) {
-        VehiculoDTO dto = new VehiculoDTO();
-        dto.setIdVehiculo(v.getIdVehiculo());
-        dto.setEstado(v.getEstado());
-        dto.setPlaca(v.getPlaca());
-        dto.setMarca(v.getMarca());
-        dto.setModelo(v.getModelo());
-        dto.setColor(v.getColor());
-        dto.setPrecioDia(v.getPrecioDia());
-        return dto;
+    private VehiculoDTO convertToDTO(Vehiculo vehiculo54) {
+        VehiculoDTO dto54 = new VehiculoDTO();
+
+        dto54.setIdVehiculo54(vehiculo54.getIdVehiculo54());
+        dto54.setEstado54(vehiculo54.getEstado54());
+        dto54.setPlaca54(vehiculo54.getPlaca54());
+        dto54.setMarca54(vehiculo54.getMarca54());
+        dto54.setModelo54(vehiculo54.getModelo54());
+        dto54.setColor54(vehiculo54.getColor54());
+        dto54.setPrecioDia54(vehiculo54.getPrecioDia54());
+
+        return dto54;
     }
 
-    private Vehiculo convertToEntity(VehiculoDTO dto) {
-        Vehiculo vehiculo = new Vehiculo();
-        vehiculo.setPlaca(dto.getPlaca());
-        vehiculo.setMarca(dto.getMarca());
-        vehiculo.setModelo(dto.getModelo());
-        vehiculo.setColor(dto.getColor());
-        vehiculo.setPrecioDia(dto.getPrecioDia());
-        vehiculo.setEstado(true);
-        return vehiculo;
+    private Vehiculo convertToEntity(VehiculoDTO dto54) {
+        Vehiculo vehiculo54 = new Vehiculo();
+
+        vehiculo54.setPlaca54(dto54.getPlaca54());
+        vehiculo54.setMarca54(dto54.getMarca54());
+        vehiculo54.setModelo54(dto54.getModelo54());
+        vehiculo54.setColor54(dto54.getColor54());
+        vehiculo54.setPrecioDia54(dto54.getPrecioDia54());
+        vehiculo54.setEstado54(true);
+
+        return vehiculo54;
     }
 }

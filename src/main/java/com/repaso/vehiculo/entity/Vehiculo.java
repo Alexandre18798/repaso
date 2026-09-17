@@ -11,10 +11,6 @@ import jakarta.validation.constraints.Size;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-/**
- * ENTIDAD ENTREGADA POR EL CATEDRATICO - NO MODIFICAR.
- * Mapea la tabla "vehiculo" de la base de datos repaso.
- */
 @Entity
 @Table(name = "vehiculo")
 public class Vehiculo implements Serializable {
@@ -24,97 +20,96 @@ public class Vehiculo implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "ID_VEHICULO")
-    private Integer idVehiculo;
+    @Column(name = "ID_VEHICULO54")
+    private Integer idVehiculo54;
 
-    @Column(name = "ESTADO")
-    private Boolean estado;
+    @Column(name = "ESTADO54")
+    private Boolean estado54;
 
     @Size(max = 10)
-    @Column(name = "PLACA")
-    private String placa;
+    @Column(name = "PLACA54")
+    private String placa54;
 
     @Size(max = 50)
-    @Column(name = "MARCA")
-    private String marca;
+    @Column(name = "MARCA54")
+    private String marca54;
 
     @Size(max = 50)
-    @Column(name = "MODELO")
-    private String modelo;
+    @Column(name = "MODELO54")
+    private String modelo54;
 
     @Size(max = 30)
-    @Column(name = "COLOR")
-    private String color;
+    @Column(name = "COLOR54")
+    private String color54;
 
-    @Column(name = "PRECIO_DIA")
-    private BigDecimal precioDia;
+    @Column(name = "PRECIO_DIA54")
+    private BigDecimal precioDia54;
 
     public Vehiculo() {
     }
 
-    public Vehiculo(Integer idVehiculo) {
-        this.idVehiculo = idVehiculo;
+    public Vehiculo(Integer idVehiculo54) {
+        this.idVehiculo54 = idVehiculo54;
     }
 
-    public Integer getIdVehiculo() {
-        return idVehiculo;
+    public Integer getIdVehiculo54() {
+        return idVehiculo54;
     }
 
-    public void setIdVehiculo(Integer idVehiculo) {
-        this.idVehiculo = idVehiculo;
+    public void setIdVehiculo54(Integer idVehiculo54) {
+        this.idVehiculo54 = idVehiculo54;
     }
 
-    public Boolean getEstado() {
-        return estado;
+    public Boolean getEstado54() {
+        return estado54;
     }
 
-    public void setEstado(Boolean estado) {
-        this.estado = estado;
+    public void setEstado54(Boolean estado54) {
+        this.estado54 = estado54;
     }
 
-    public String getPlaca() {
-        return placa;
+    public String getPlaca54() {
+        return placa54;
     }
 
-    public void setPlaca(String placa) {
-        this.placa = placa;
+    public void setPlaca54(String placa54) {
+        this.placa54 = placa54;
     }
 
-    public String getMarca() {
-        return marca;
+    public String getMarca54() {
+        return marca54;
     }
 
-    public void setMarca(String marca) {
-        this.marca = marca;
+    public void setMarca54(String marca54) {
+        this.marca54 = marca54;
     }
 
-    public String getModelo() {
-        return modelo;
+    public String getModelo54() {
+        return modelo54;
     }
 
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
+    public void setModelo54(String modelo54) {
+        this.modelo54 = modelo54;
     }
 
-    public String getColor() {
-        return color;
+    public String getColor54() {
+        return color54;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public void setColor54(String color54) {
+        this.color54 = color54;
     }
 
-    public BigDecimal getPrecioDia() {
-        return precioDia;
+    public BigDecimal getPrecioDia54() {
+        return precioDia54;
     }
 
-    public void setPrecioDia(BigDecimal precioDia) {
-        this.precioDia = precioDia;
+    public void setPrecioDia54(BigDecimal precioDia54) {
+        this.precioDia54 = precioDia54;
     }
 
     @Override
     public String toString() {
-        return "com.repaso.vehiculo.entity.Vehiculo[ idVehiculo=" + idVehiculo + " ]";
+        return "com.repaso.vehiculo.entity.Vehiculo[ idVehiculo54=" + idVehiculo54 + " ]";
     }
-
 }

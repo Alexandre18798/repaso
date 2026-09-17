@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface VehiculoRepository extends JpaRepository<Vehiculo, Integer> {
 
-    List<Vehiculo> findByEstadoTrueOrderByIdVehiculoDesc();
+    List<Vehiculo> findByEstado54TrueOrderByIdVehiculo54Desc();
 
 }
